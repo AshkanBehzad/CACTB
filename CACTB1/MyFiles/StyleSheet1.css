@@ -1,0 +1,112 @@
+﻿body{
+    font-family:BYekan;
+}
+@font-face {
+    font-family: BYekan;
+    src: url('BYekan.ttf') format('truetype');
+}
+ul li{
+    list-style:none !important;
+}
+.yekan{
+    font-family: BYekan;
+}
+.rtl{
+    direction:rtl !important;
+}
+.ltr{
+    direction:ltr !important;
+}
+.farsi{
+    direction:rtl !important;
+    font-family: BYekan !important;
+}
+.padd-0{
+    padding:0px !important;
+}
+.mag-0{
+    margin:0px !important;
+}
+#side-admin-menu{
+    direction:rtl !important;
+    padding:0px;
+}
+.notValid{
+    color:#d3492b;
+}
+.ab{
+    position:relative;
+    top:10px;
+}
+.loginPic
+{
+    /*padding:3px;*/
+    border:1px solid #808080;
+    margin:20px auto;
+    opacity:0.6;
+    transition:all 0.3s;
+}
+
+.loginPic:hover{
+    border:1px solid #2c2c2c;
+    opacity:0.5;
+}
+.bold-font-20{
+    font-size:20px;
+    font-weight:bolder;
+}
+.bold-font-50{
+    font-size:50px;
+    font-weight:bolder;
+}
+.lblEmail{
+    font-size:15px;
+    font-weight:500;
+    color:#808080;
+    font-family:Arial,sans-serif !important;
+
+}
+.off-10{
+    margin-top:10px;
+}
+.td-bordered{
+    border-right:1px solid #ddd !important;
+}
+.btn-delete{
+    background:rgb(221,221,221) !important;
+    color:#333 !important;
+}
+.margin-top-25{
+    margin-top:25px !important;
+}
+.ID-width{
+    width:15px !important;
+}
+.title-width{
+    width:37px !important;
+}
+.des-width{
+    width:60px !important;
+}
+
+
+
+.a_paging 
+{
+    width:10px !important;
+    padding:5px !important;
+    border:1px solid #808080 !important;
+    margin:0px !important;
+}
+.border-r1
+{
+    border-bottom-right-radius:3px;
+    border-top-right-radius:3px;
+    border-right:thin solid #949494;
+}
+.border-r2
+{
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px;
+    border-left:thin solid #949494;
+}
