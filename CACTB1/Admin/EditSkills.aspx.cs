@@ -13,9 +13,10 @@ namespace CACTB1.Admin
 {
     public partial class EditSkills : System.Web.UI.Page
     {
-        static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
-        static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
-        static string connectionString = connString.ToString();
+        //get connectionString from Web.config
+            static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
+            static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
+            static string connectionString = connString.ToString();
         SqlConnection connection = new SqlConnection(connectionString);
         DatabaseConnection db = new DatabaseConnection();
 
@@ -36,44 +37,41 @@ namespace CACTB1.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                if (Request.QueryString["Sid"] != null)
-                {
-                    SqlDataAdapter da = new SqlDataAdapter("", connection);
-                    DataTable dt = new DataTable();
-                    da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE ID=@Sid2";
-                    da.SelectCommand.Parameters.AddWithValue("@Sid2", Request.QueryString["Sid"]);
-                    da.Fill(dt);
-                    if (dt.Rows.Count == 0)
-                    {
-                        Response.Redirect("Skills.aspx");
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
-                }
-            }
+                LoadData();
+            //Handle null QueryString
             if (Request.QueryString["Sid"] == null)
-            {
                 Response.Redirect("Skills.aspx");
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
+
+        protected void cvTitle_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("", connection);
+            DataTable dt = new DataTable();
+            DataTable dl = new DataTable();
+            da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE ID = @sxid";
+            da.SelectCommand.Parameters.AddWithValue("@sxid", Request.QueryString["Sid"]);
+            da.Fill(dl);
+            //Consept : Check if TextBox' value has changed or not
+            //If This part doesn't Exist -> the page won't be valid Because of the next part of Validation. WHY? ...
+            //if the title isn't changed the next part cause invalidation beacuse the Title has already Exist
+            if (dl.Rows[0]["Title"].ToString() != txtTitle.Text)
+            {
+                da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE Title=@t AND Cat_ID=@scid";
+                da.SelectCommand.Parameters.AddWithValue("@t", txtTitle.Text);
+                da.SelectCommand.Parameters.AddWithValue("@scid", ddlSkillCat.SelectedValue);
+                da.Fill(dt);
+                //If the TextBox' Value has changed ...
+                //So , Now Check if The New Value has already Exist in Table or not
+                if (dt.Rows.Count == 0)
+                {
+                    args.IsValid = true;
+                }
+                else
+                    args.IsValid = false;
+            }
+        }
+        
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -89,29 +87,6 @@ namespace CACTB1.Admin
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 Response.Redirect("Skills.aspx");
-            }
-        }
-
-        protected void cvTitle_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            SqlDataAdapter da = new SqlDataAdapter("", connection);
-            DataTable dt = new DataTable();
-            DataTable dl = new DataTable();
-            da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE ID = @sxid";
-            da.SelectCommand.Parameters.AddWithValue("@sxid", Request.QueryString["Sid"]);
-            da.Fill(dl);
-            if (dl.Rows[0]["Title"].ToString() != txtTitle.Text)
-            {
-                da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE Title=@t AND Cat_ID=@scid";
-                da.SelectCommand.Parameters.AddWithValue("@t", txtTitle.Text);
-                da.SelectCommand.Parameters.AddWithValue("@scid", ddlSkillCat.SelectedValue);
-                da.Fill(dt);
-                if (dt.Rows.Count == 0)
-                {
-                    args.IsValid = true;
-                }
-                else
-                    args.IsValid = false;
             }
         }
     }

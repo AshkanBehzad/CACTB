@@ -13,9 +13,10 @@ namespace CACTB1.Admin
 {
     public partial class EditSkillCategory : System.Web.UI.Page
     {
-        static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
-        static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
-        static string connectionString = connString.ToString();
+        //Get ConnectionString From WEb.config
+            static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
+            static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
+            static string connectionString = connString.ToString();
         SqlConnection connection = new SqlConnection(connectionString);
         DatabaseConnection db = new DatabaseConnection();
 
@@ -34,37 +35,14 @@ namespace CACTB1.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                if (Request.QueryString["Sid"] != null)
-                {
-                    SqlDataAdapter da = new SqlDataAdapter("", connection);
-                   
-                    DataTable dt = new DataTable();
-                    da.SelectCommand.CommandText = "SELECT * FROM SkillCategory WHERE ID=@Sid2";
-                    da.SelectCommand.Parameters.AddWithValue("@Sid2", Request.QueryString["Sid"]);
-                    da.Fill(dt);
-                    if (dt.Rows.Count == 0)
-                    {
-                        Response.Redirect("SkilsCategory.aspx");
-                    }
-                    else
-                    {
-                        LoadData();
-                    }
-                }
-            }
+                LoadData();
+            //Handle null QueryString
             if (Request.QueryString["Sid"] == null)
             {
                 Response.Redirect("SkilsCategory.aspx");
             }
-
-
-
-
-
-
         }
-
+        //Validation > 
         protected void cvTitle_ServerValidate(object source, ServerValidateEventArgs args)
         {
             SqlDataAdapter da = new SqlDataAdapter("", connection);
@@ -73,11 +51,16 @@ namespace CACTB1.Admin
             da.SelectCommand.CommandText = "SELECT * FROM SkillCategory WHERE ID = @sxid";
             da.SelectCommand.Parameters.AddWithValue("@sxid", Request.QueryString["Sid"]);
             da.Fill(dl);
+            //Consept : Check if TextBox' value has changed or not
+            //If This part doesn't Exist -> the page won't be valid Because of the next part of Validation. WHY? ...
+            //if the title isn't changed the next part cause invalidation beacuse the Title has already Exist
             if (dl.Rows[0]["Title"].ToString() != txtTitle.Text)
             {
                 da.SelectCommand.CommandText = "SELECT * FROM SkillCategory WHERE Title = @title ";
                 da.SelectCommand.Parameters.AddWithValue("@title", txtTitle.Text);
                 da.Fill(dt);
+                //If the TextBox' Value has changed ...
+                //So , Now Check if The New Value has already Exist in Table or not
                 if (dt.Rows.Count != 0)
                 {
                     args.IsValid = false;
@@ -86,7 +69,7 @@ namespace CACTB1.Admin
                     args.IsValid = true;
             }
         }
-
+        //Update table if page isValid
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)

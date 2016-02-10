@@ -13,10 +13,10 @@ namespace CACTB1.Admin
 {
     public partial class Fields : System.Web.UI.Page
     {
-
-        static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
-        static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
-        static string connectionString = connString.ToString();
+        //get connectionString from web.config
+            static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
+            static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
+            static string connectionString = connString.ToString();
         SqlConnection connection = new SqlConnection(connectionString);
         DatabaseConnection db = new DatabaseConnection();
         public void LoadData()
@@ -26,12 +26,10 @@ namespace CACTB1.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
                 LoadData();
-            }
             lblError.Text = string.Empty;
         }
-
+        //Validation > Check The Entered Field Has Already Exist ot Not
         protected void cvTitle_ServerValidate(object source, ServerValidateEventArgs args)
         {
             SqlDataAdapter da = new SqlDataAdapter("", connection);

@@ -52,24 +52,32 @@ namespace CACTB1.User
             string fileName = mid.ToString();
             string extension = Path.GetExtension(upFileName);
             string filePath = folderName + fileName + extension;
-            if (File.Exists(folderName + fileName))
+            if (fuProlileImage.FileName.Length != 0 || fuProlileImage.PostedFile.ToString() != string.Empty || extension.Length != 0)
             {
-                File.Delete(folderName + fileName);
-                fuProlileImage.SaveAs(Server.MapPath(filePath));
+                if (File.Exists(folderName + fileName))
+                {
+                    File.Delete(folderName + fileName);
+                    fuProlileImage.SaveAs(Server.MapPath(filePath));
+                }
+                else
+                    fuProlileImage.SaveAs(Server.MapPath(filePath));
+                SqlCommand cmd = new SqlCommand("", connection);
+                cmd.CommandText = "UPDATE Members SET Image=@img,ImageExtention=@ex WHERE ID=@mid";
+                cmd.Parameters.AddWithValue("@img", folderName + fileName);
+                cmd.Parameters.AddWithValue("@ex", extension);
+                cmd.Parameters.AddWithValue("@mid", mid);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                LoadImage();
+                Session["Mid"] = Session["Mid"];
+                Response.Redirect("SelectSkill.aspx");
             }
             else
-                fuProlileImage.SaveAs(Server.MapPath(filePath));
-            SqlCommand cmd = new SqlCommand("", connection);
-            cmd.CommandText = "UPDATE Members SET Image=@img,ImageExtention=@ex WHERE ID=@mid";
-            cmd.Parameters.AddWithValue("@img", folderName + fileName);
-            cmd.Parameters.AddWithValue("@ex", extension);
-            cmd.Parameters.AddWithValue("@mid", mid);
-            connection.Open();
-            cmd.ExecuteNonQuery();
-            connection.Close();
-            LoadImage();
-            Session["Mid"] = Session["Mid"];
-            Response.Redirect("SelectSkill.aspx");
+            {
+                Session["Mid"] = Session["Mid"];
+                Response.Redirect("SelectSkill.aspx");
+            }
         }
 
         protected void btnIgnore_Click(object sender, EventArgs e)

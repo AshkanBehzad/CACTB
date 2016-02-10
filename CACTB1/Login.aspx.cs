@@ -19,7 +19,7 @@ namespace CACTB1.User
         SqlConnection connection = new SqlConnection(connectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["Mid"] = null;
         }
 
         protected void cvUsername_ServerValidate(object source, ServerValidateEventArgs args)
