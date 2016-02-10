@@ -13,7 +13,7 @@ namespace CACTB1.Admin
 {
     public partial class EditField : System.Web.UI.Page
     {
-
+        //Get Connection String From Web.config
         static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
         static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
         static string connectionString = connString.ToString();

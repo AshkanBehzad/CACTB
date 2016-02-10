@@ -18,7 +18,6 @@
             <h1 class="page-header">افزودن عضو جدید</h1>
         </div>
     </div>
-    <!-- /.row -->
     <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
             <div id="panel" class="panel panel-default farsi">
@@ -31,124 +30,125 @@
                             <div class="alert alert-warning alert-dismissible" id="warn" role="alert">
                                 <button type="button" class="close" id="close_modal"><span>&times;</span></button>
                                 <h5>
-                                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#CC0000" />
+                                    <asp:validationsummary id="ValidationSummary1" runat="server" forecolor="#CC0000" />
                                 </h5>
                             </div>
+                            <!----------Form Controls && Validations------------>
                             <div class="form-group">
                                 <label>نام : </label>
-                                <asp:RequiredFieldValidator
-                                    ForeColor="#CC0000"
-                                    ID="RequiredFieldValidator1"
+                                <asp:requiredfieldvalidator
+                                    forecolor="#CC0000"
+                                    id="RequiredFieldValidator1"
                                     runat="server"
-                                    ErrorMessage="نام را وارد نکرده‌اید"
-                                    ControlToValidate="txtFirstName">*</asp:RequiredFieldValidator>
-                                <asp:TextBox ID="txtFirstName" CssClass="form-control" runat="server"></asp:TextBox>
+                                    errormessage="نام را وارد نکرده‌اید"
+                                    controltovalidate="txtFirstName">*</asp:requiredfieldvalidator>
+                                <asp:textbox id="txtFirstName" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
                                 <label>نام‌خانوادگی : </label>
-                                <asp:RequiredFieldValidator
-                                    ForeColor="#CC0000"
-                                    ID="RequiredFieldValidator2"
+                                <asp:requiredfieldvalidator
+                                    forecolor="#CC0000"
+                                    id="RequiredFieldValidator2"
                                     runat="server"
-                                    ErrorMessage="نام‌خانوادگی را وارد نکرده‌اید"
-                                    ControlToValidate="txtLastName">*</asp:RequiredFieldValidator>
-                                <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server"></asp:TextBox>
+                                    errormessage="نام‌خانوادگی را وارد نکرده‌اید"
+                                    controltovalidate="txtLastName">*</asp:requiredfieldvalidator>
+                                <asp:textbox id="txtLastName" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
                                 <label>شماره ملّی : </label>
-                                <asp:RequiredFieldValidator
-                                    ForeColor="#CC0000"
-                                    ID="RequiredFieldValidator3"
+                                <asp:requiredfieldvalidator
+                                    forecolor="#CC0000"
+                                    id="RequiredFieldValidator3"
                                     runat="server"
-                                    ErrorMessage="شماره ملّی را وارد نکرده‌اید"
-                                    ControlToValidate="txtNationalID">*</asp:RequiredFieldValidator>
-                                <asp:CustomValidator ID="CustomValidator1" runat="server"
-                                    ControlToValidate="txtNationalID"
-                                    OnServerValidate="CustomValidator1_ServerValidate"
-                                    ErrorMessage="کد ملی وارد شده معتبر نیست"
-                                    ForeColor="#CC0000" ValidateEmptyText="True">*</asp:CustomValidator>
-                                <asp:TextBox ID="txtNationalID" CssClass="form-control" runat="server"></asp:TextBox>
+                                    errormessage="شماره ملّی را وارد نکرده‌اید"
+                                    controltovalidate="txtNationalID">*</asp:requiredfieldvalidator>
+                                <asp:customvalidator id="CustomValidator1" runat="server"
+                                    controltovalidate="txtNationalID"
+                                    onservervalidate="CustomValidator1_ServerValidate"
+                                    errormessage="کد ملی وارد شده معتبر نیست"
+                                    forecolor="#CC0000" validateemptytext="True">*</asp:customvalidator>
+                                <asp:textbox id="txtNationalID" cssclass="form-control" runat="server"></asp:textbox>
 
                             </div>
                             <div class="form-group">
                                 <label>شماره دانشجویی : </label>
-                                <asp:RequiredFieldValidator
-                                    ForeColor="#CC0000"
-                                    ID="RequiredFieldValidator6"
+                                <asp:requiredfieldvalidator
+                                    forecolor="#CC0000"
+                                    id="RequiredFieldValidator6"
                                     runat="server"
-                                    ErrorMessage=" شماره دانشجویی را وارد نکرده‌اید"
-                                    ControlToValidate="txtStdentID">*</asp:RequiredFieldValidator>
-                                <asp:CustomValidator
-                                    ID="CustomValidator3"
+                                    errormessage=" شماره دانشجویی را وارد نکرده‌اید"
+                                    controltovalidate="txtStdentID">*</asp:requiredfieldvalidator>
+                                <asp:customvalidator
+                                    id="CustomValidator3"
                                     runat="server"
-                                    ControlToValidate="txtStdentID"
-                                    ForeColor="#CC0000"
-                                    ErrorMessage="عضو با این شماره دانشجویی موجود است" OnServerValidate="CustomValidator3_ServerValidate">*</asp:CustomValidator>
-                                <asp:TextBox ID="txtStdentID" CssClass="form-control" runat="server"></asp:TextBox>
+                                    controltovalidate="txtStdentID"
+                                    forecolor="#CC0000"
+                                    errormessage="عضو با این شماره دانشجویی موجود است" onservervalidate="CustomValidator3_ServerValidate">*</asp:customvalidator>
+                                <asp:textbox id="txtStdentID" cssclass="form-control" runat="server"></asp:textbox>
 
                             </div>
                             <div class="form-group">
                                 <label>شماره تماس : </label>
-                                <asp:RequiredFieldValidator
-                                    ID="RequiredFieldValidator5"
+                                <asp:requiredfieldvalidator
+                                    id="RequiredFieldValidator5"
                                     runat="server"
-                                    ControlToValidate="txtPhoneNumber"
-                                    ForeColor="#CC0000"
-                                    ErrorMessage="شماره تماس را وارد نکرده‌اید">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator
-                                    ID="RegularExpressionValidator2"
+                                    controltovalidate="txtPhoneNumber"
+                                    forecolor="#CC0000"
+                                    errormessage="شماره تماس را وارد نکرده‌اید">*</asp:requiredfieldvalidator>
+                                <asp:regularexpressionvalidator
+                                    id="RegularExpressionValidator2"
                                     runat="server"
-                                    ControlToValidate="txtPhoneNumber"
-                                    ValidationExpression="\d+"
-                                    ForeColor="#CC0000"
-                                    ErrorMessage="شماره تماس باید فاقد کاراکتر باشد">*</asp:RegularExpressionValidator>
-                                <asp:TextBox ID="txtPhoneNumber" CssClass="form-control" runat="server"></asp:TextBox>
+                                    controltovalidate="txtPhoneNumber"
+                                    validationexpression="\d+"
+                                    forecolor="#CC0000"
+                                    errormessage="شماره تماس باید فاقد کاراکتر باشد">*</asp:regularexpressionvalidator>
+                                <asp:textbox id="txtPhoneNumber" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
                                 <label>رایانامه  : </label>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                <asp:regularexpressionvalidator id="RegularExpressionValidator1"
                                     runat="server"
-                                    ControlToValidate="txtEmail"
-                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                    ErrorMessage="آدرس ایمیل اشتباه وارد شده"
-                                    ForeColor="#CC0000">*</asp:RegularExpressionValidator>
-                                <asp:RequiredFieldValidator
-                                    ID="RequiredFieldValidator4"
+                                    controltovalidate="txtEmail"
+                                    validationexpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    errormessage="آدرس ایمیل اشتباه وارد شده"
+                                    forecolor="#CC0000">*</asp:regularexpressionvalidator>
+                                <asp:requiredfieldvalidator
+                                    id="RequiredFieldValidator4"
                                     runat="server"
-                                    ControlToValidate="txtEmail"
-                                    ForeColor="#CC0000"
-                                    ErrorMessage="ایمیل را وارد نکرده‌اید">*</asp:RequiredFieldValidator>
-                                <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
+                                    controltovalidate="txtEmail"
+                                    forecolor="#CC0000"
+                                    errormessage="ایمیل را وارد نکرده‌اید">*</asp:requiredfieldvalidator>
+                                <asp:textbox id="txtEmail" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
                                 <label>رشته / مقطع / گرایش  : </label>
-                                <asp:DropDownList ID="ddlField" runat="server" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="ID"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CACTB1ConnectionString %>" SelectCommand="SELECT * FROM [Fields]"></asp:SqlDataSource>
+                                <asp:dropdownlist id="ddlField" runat="server" cssclass="form-control" datasourceid="SqlDataSource1" datatextfield="Title" datavaluefield="ID"></asp:dropdownlist>
+                                <asp:sqldatasource id="SqlDataSource1" runat="server" connectionstring="<%$ ConnectionStrings:CACTB1ConnectionString %>" selectcommand="SELECT * FROM [Fields]"></asp:sqldatasource>
                             </div>
                             <div class="form-group">
                                 <label>جنسیت  : </label>
                                 <div style="margin-right: 10px;">
                                     <div>
-                                        <asp:RadioButton ID="rdbmale" Checked="true" GroupName="Gender" runat="server" />&nbsp;&nbsp;مرد
+                                        <asp:radiobutton id="rdbmale" checked="true" groupname="Gender" runat="server" />
+                                        &nbsp;&nbsp;مرد
                                     </div>
                                     <div>
-                                        <asp:RadioButton ID="rdbFemale" GroupName="Gender" runat="server" />&nbsp;&nbsp;زن
+                                        <asp:radiobutton id="rdbFemale" groupname="Gender" runat="server" />
+                                        &nbsp;&nbsp;زن
                                     </div>
                                 </div>
                             </div>
-                            <asp:Button ID="btnAdd" runat="server" Text="افزودن" CssClass="btn btn-primary btn-block" OnClick="btnAdd_Click" />
+                            <asp:button id="btnAdd" runat="server" text="افزودن" cssclass="btn btn-primary btn-block" onclick="btnAdd_Click" />
                         </div>
-                        <!-- /.col-lg-6 (nested) -->
+                        <!----------// Form Controls && Validations------------>
                     </div>
-                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
         </div>
         <div class="clearfix"></div>
-        <!-- /.col-lg-12 -->
     </div>
+
+    <!-------------Display Validation Summery--------------->
     <script>
         $("input[type=submit]").click(function () {
             if ($("#warn h5 ul").length != 0) {
@@ -166,4 +166,5 @@
             }
         });
     </script>
+    <!-------------// Display Validation Summery--------------->
 </asp:Content>
