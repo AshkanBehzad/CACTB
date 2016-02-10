@@ -12,8 +12,8 @@
     <div class="container-fluid" style="margin-top: 40px;">
         <div class="row farsi">
             <div class="col-lg-3 pull-right">
-                <asp:image class="img-responsive loginPic img-circle" width="200px" imageurl="~/MyFiles/user.png" id="Image1" runat="server" />
-                <asp:button id="btnDeleteImage" runat="server" cssclass="btn farsi pull-left" text="حذف تصویر" />
+                <asp:image class="img-responsive loginPic img-circle" width="200" Height="200" imageurl="~/MyFiles/user.png" id="imgProfile" runat="server" />
+                <asp:button id="btnDeleteImage" runat="server" cssclass="btn farsi pull-left" text="حذف تصویر" OnClick="btnDeleteImage_Click" />
                 <div class="clearfix"></div>
             </div>
             <div class="col-lg-9">

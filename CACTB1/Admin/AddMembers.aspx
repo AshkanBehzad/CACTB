@@ -20,10 +20,6 @@
     </div>
     <!-- /.row -->
     <div class="row">
-
-
-
-
         <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
             <div id="panel" class="panel panel-default farsi">
                 <div class="panel-heading ">
@@ -82,10 +78,6 @@
                                     runat="server"
                                     ErrorMessage=" شماره دانشجویی را وارد نکرده‌اید"
                                     ControlToValidate="txtStdentID">*</asp:RequiredFieldValidator>
-                                <asp:CustomValidator ID="CustomValidator2" runat="server"
-                                    ErrorMessage="شماره دانشجویی اشتباه است"
-                                    ControlToValidate="txtStdentID"
-                                    ForeColor="#CC0000" OnServerValidate="CustomValidator2_ServerValidate" ValidateEmptyText="True">*</asp:CustomValidator>
                                 <asp:CustomValidator
                                     ID="CustomValidator3"
                                     runat="server"

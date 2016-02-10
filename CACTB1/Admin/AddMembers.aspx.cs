@@ -70,14 +70,6 @@ namespace CACTB1.Admin
             var nationalCode = args.Value;
             args.IsValid = IsValidNationalCode(nationalCode);
         }
-        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if (args.Value.Length != 11)
-            {
-                args.IsValid = false;
-            }
-        }
-
         protected void CustomValidator3_ServerValidate(object source, ServerValidateEventArgs args)
         {
             SqlDataAdapter da = new SqlDataAdapter("", connection);

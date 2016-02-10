@@ -97,17 +97,20 @@
     <Content Include="Admin\DeleteAdmin.aspx" />
     <Content Include="Admin\EditField.aspx" />
     <Content Include="Admin\EditSkillCategory.aspx" />
+    <Content Include="Admin\EditSkillRequest.aspx" />
     <Content Include="Admin\EditSkills.aspx" />
     <Content Include="Admin\Fields.aspx" />
     <Content Include="Admin\MemberStats.aspx" />
     <Content Include="Admin\Search.aspx" />
     <Content Include="Admin\SetAdmin.aspx" />
+    <Content Include="Admin\SkillRequests.aspx" />
     <Content Include="Admin\Skills.aspx" />
     <Content Include="Admin\SkilsCategory.aspx" />
-    <Content Include="Admin\TREE.aspx" />
-    <Content Include="Admin\WebForm1.aspx" />
-    <Content Include="ErrorPages\404.aspx" />
-    <Content Include="ErrorPages\Oops.aspx" />
+    <Content Include="ErrorPages\abl.html" />
+    <Content Include="ErrorPages\ablStyle.css" />
+    <Content Include="ErrorPages\code-wallpaper-16.jpg" />
+    <Content Include="ErrorPages\fourOfour.html" />
+    <Content Include="ErrorPages\Oops.html" />
     <Content Include="MyFiles\user.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -122,8 +125,11 @@
     <Content Include="Login.aspx" />
     <Content Include="PasswordCheck.aspx" />
     <Content Include="UserLogin.Master" />
+    <Content Include="User\ChangePassword.aspx" />
     <Content Include="User\CompeletInformations.aspx" />
     <Content Include="User\SelectImage.aspx" />
+    <Content Include="User\SelectSkill.aspx" />
+    <Content Include="User\SelectSkills.aspx" />
     <Content Include="User\User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -187,6 +193,13 @@
     <Compile Include="Admin\EditSkillCategory.aspx.designer.cs">
       <DependentUpon>EditSkillCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditSkillRequest.aspx.cs">
+      <DependentUpon>EditSkillRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditSkillRequest.aspx.designer.cs">
+      <DependentUpon>EditSkillRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditSkills.aspx.cs">
       <DependentUpon>EditSkills.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +242,13 @@
     <Compile Include="Admin\SetAdmin.aspx.designer.cs">
       <DependentUpon>SetAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\SkillRequests.aspx.cs">
+      <DependentUpon>SkillRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SkillRequests.aspx.designer.cs">
+      <DependentUpon>SkillRequests.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Skills.aspx.cs">
       <DependentUpon>Skills.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,36 +263,8 @@
     <Compile Include="Admin\SkilsCategory.aspx.designer.cs">
       <DependentUpon>SkilsCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\TREE.aspx.cs">
-      <DependentUpon>TREE.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\TREE.aspx.designer.cs">
-      <DependentUpon>TREE.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PersianDate.cs" />
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="ErrorPages\404.aspx.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ErrorPages\404.aspx.designer.cs">
-      <DependentUpon>404.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ErrorPages\Oops.aspx.cs">
-      <DependentUpon>Oops.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ErrorPages\Oops.aspx.designer.cs">
-      <DependentUpon>Oops.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,6 +290,13 @@
     <Compile Include="UserLogin.Master.designer.cs">
       <DependentUpon>UserLogin.Master</DependentUpon>
     </Compile>
+    <Compile Include="User\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\CompeletInformations.aspx.cs">
       <DependentUpon>CompeletInformations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -311,6 +310,20 @@
     </Compile>
     <Compile Include="User\SelectImage.aspx.designer.cs">
       <DependentUpon>SelectImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SelectSkill.aspx.cs">
+      <DependentUpon>SelectSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SelectSkill.aspx.designer.cs">
+      <DependentUpon>SelectSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SelectSkills.aspx.cs">
+      <DependentUpon>SelectSkills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SelectSkills.aspx.designer.cs">
+      <DependentUpon>SelectSkills.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>

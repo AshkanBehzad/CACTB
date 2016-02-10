@@ -27,7 +27,7 @@ namespace CACTB1.Admin
 
         protected void grdMemberList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int id = Convert.ToInt32(e.CommandArgument);
+            string id = e.CommandArgument.ToString();
             if (e.CommandName == "Show")
             {
                 Session["Mid"] = id.ToString();

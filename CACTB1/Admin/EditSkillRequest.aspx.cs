@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CACTB1.ErrorPages
+namespace CACTB1.Admin
 {
-    public partial class _404 : System.Web.UI.Page
+    public partial class EditSkillRequest : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+        
     }
 }

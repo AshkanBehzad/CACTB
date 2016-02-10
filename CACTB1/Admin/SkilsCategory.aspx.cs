@@ -43,13 +43,15 @@ namespace CACTB1.Admin
         {
             if (!IsPostBack)
                 LoadData();
+            if (IsPostBack)
+                lblErrorMes.Text = string.Empty;
         }
 
         protected void grdSkillCat_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try
             {
-                int id = Convert.ToInt32(e.CommandArgument);
+                string id = e.CommandArgument.ToString();
 
                 if (e.CommandName == "DeleteItem")
                 {

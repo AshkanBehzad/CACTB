@@ -26,11 +26,6 @@
                         <asp:GridView CssClass="table table-striped table-bordered table-hover dataTable no-footer farsi" ID="grdMemberList" runat="server" AutoGenerateColumns="False" OnRowCommand="grdMemberList_RowCommand" AllowPaging="True" OnPageIndexChanging="grdMemberList_PageIndexChanging" PageSize="4">
                             <Columns>
                                 <asp:BoundField DataField="Mid" HeaderText="شماره عضویت" />
-                                <asp:TemplateField HeaderText="عکس">
-                                    <ItemTemplate>
-                                        <asp:Image ID="imgProfile" CssClass="img-responsive img-circle loginPic" Width="50" ImageUrl='<%#Eval("Image") %>' data-toggle="tooltip" data-placement="top" title='<%#Eval("Mid") %>' runat="server" />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
                                 <asp:BoundField DataField="FirstName" HeaderText="نام" />
                                 <asp:BoundField DataField="LastName" HeaderText="نام‌خانوادگی" />
                                 <asp:BoundField DataField="NationalID" HeaderText="کد ملّی" />

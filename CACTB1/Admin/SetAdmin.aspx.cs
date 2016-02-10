@@ -51,7 +51,7 @@ namespace CACTB1.Admin
 
         protected void grdUserSearched_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int id = Convert.ToInt32(e.CommandArgument);
+            string id = e.CommandArgument.ToString();
             if (e.CommandName == "SetAdmin")
             {
                 SqlDataAdapter da = new SqlDataAdapter("", connection);

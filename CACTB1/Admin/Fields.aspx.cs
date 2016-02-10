@@ -62,7 +62,7 @@ namespace CACTB1.Admin
 
         protected void grdFields_RowCommand(object sender, GridViewCommandEventArgs e)
         {   
-            int id = Convert.ToInt32(e.CommandArgument);
+            string id = e.CommandArgument.ToString();
             if (e.CommandName == "DeleteItem")
             {
                 SqlCommand cmd = new SqlCommand("", connection);

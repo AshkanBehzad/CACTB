@@ -19,20 +19,26 @@ namespace CACTB1.Admin
         static string connectionString = connString.ToString();
         SqlConnection connection = new SqlConnection(connectionString);
         DatabaseConnection db = new DatabaseConnection();
-        
-
-        protected void Page_Load(object sender, EventArgs e)
+        public void LoadData()
         {
+            drpField.Items.Insert(0, new ListItem("مقطع/گرایش", string.Empty));
+            drpField.SelectedIndex = 0;
+            db.SelectQueryFillDropDownList("SELECT * FROM Fields", drpField, "Title", "ID");
 
         }
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+                LoadData();
+        }
         public void SearchMember()
         {
             SqlDataAdapter da = new SqlDataAdapter("", connection);
             DataTable dt = new DataTable();
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.CommandText = "SearchedMemberList";
-            da.SelectCommand.Parameters.AddWithValue("@Fid", drpField.SelectedValue);
+            if (drpField.SelectedValue != string.Empty)
+                da.SelectCommand.Parameters.AddWithValue("@Fid", drpField.SelectedValue);
             if (txtName.Text != string.Empty)
             {
                 da.SelectCommand.Parameters.AddWithValue("@Name", txtName.Text);
@@ -51,5 +57,6 @@ namespace CACTB1.Admin
             grdSearchedList.PageIndex = e.NewPageIndex;
             SearchMember();
         }
+
     }
 }

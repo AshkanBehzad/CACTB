@@ -27,9 +27,33 @@
     <link href="../MyFiles/StyleSheet1.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        .logo-bar {
+            width: 100%;
+            height: 50px;
+            margin: 0px;
+            padding-top: 5px;
+            padding-right: 10px;
+            background: #e9e9e9;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo-bar:hover{
+            color:#757575
+
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="logo-bar">
+            <img src="../MyFiles/cactb.png" width="40" height="40" class="img-responsive pull-right" />
+            <div class="ass-info farsi text-center pull-right">
+                <span style="font-size:10px">انجمن علمی مهندسی کامپیوتر</span>
+                <br />
+                <span style="font-size:8px">دانشگاه آزاد اسلامی واحد تهران مرکزی</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">

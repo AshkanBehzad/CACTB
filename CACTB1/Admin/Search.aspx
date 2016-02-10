@@ -9,12 +9,6 @@
             <h1 class="page-header">جست و جوی اعضا</h1>
         </div>
     </div>
-
-
-
-
-
-
     <div class="row">
         <div class="col-md-12">
             <div id="panel" class="panel panel-default farsi">
@@ -33,8 +27,8 @@
                         </div>
                         <div class="col-lg-3 pull-right">
                             <div class="form-group">
-                                <asp:DropDownList ID="drpField" CssClass="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="ID"></asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CACTB1ConnectionString %>" SelectCommand="SELECT * FROM [Fields]"></asp:SqlDataSource>
+                                <asp:DropDownList ID="drpField" CssClass="form-control" runat="server">    
+                                </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <asp:TextBox ID="txtNetionalID" CssClass="form-control" placeHolder="کدملی" runat="server"></asp:TextBox>
@@ -42,7 +36,7 @@
                         </div>
                         <div class="col-lg-3 pull-right">
                             <div class="form-group">
-                                <asp:DropDownList ID="ddlStatuse" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="Status" DataValueField="ID" ></asp:DropDownList>
+                                <asp:DropDownList ID="ddlStatuse" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="Status" DataValueField="ID"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CACTB1ConnectionString %>" SelectCommand="SELECT [ID], [Status] FROM [MembershipStatus]"></asp:SqlDataSource>
                             </div>
                             <div class="form-group">
@@ -72,7 +66,7 @@
             <div class="panel-body">
                 <div class="table-responsive farsi">
                     <label id="report"></label>
-                    <asp:GridView CssClass="table table-bordered table-hover rtl"  ID="grdSearchedList" runat="server" AllowPaging="True" OnPageIndexChanging="grdSearchedList_PageIndexChanging" AutoGenerateColumns="False">
+                    <asp:GridView CssClass="table table-bordered table-hover rtl" ID="grdSearchedList" runat="server" AllowPaging="True" OnPageIndexChanging="grdSearchedList_PageIndexChanging" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Mid" HeaderText="شماره دانشجویی" />
                             <asp:TemplateField HeaderText="عکس">
@@ -102,7 +96,7 @@
         </div>
     </div>
 
-        <script>
+    <script>
         $(document).ready(function () {
             var rowCount = $('#ContentPlaceHolder1_grdSearchedList tr').length;
             if (rowCount == 0) {

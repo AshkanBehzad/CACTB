@@ -21,7 +21,7 @@ namespace CACTB1.Admin
 
         public void LoadData()
         {
-            int id = Convert.ToInt32(Request.QueryString["Sid"]);
+            string id = Request.QueryString["Sid"].ToString();
             SqlDataAdapter da = new SqlDataAdapter("", connection);
             DataTable dt = new DataTable();
             da.SelectCommand.CommandText = "SELECT * FROM Skills WHERE ID = @idsc";
@@ -78,7 +78,7 @@ namespace CACTB1.Admin
         {
             if (Page.IsValid)
             {
-                int id = Convert.ToInt32(Request.QueryString["Sid"]);
+                string id = Request.QueryString["Sid"].ToString();
                 SqlCommand cmd = new SqlCommand("", connection);
                 cmd.CommandText = "UPDATE Skills SET Title=@title,Description=@des,Cat_ID=@cat WHERE ID=@sid";
                 cmd.Parameters.AddWithValue("@title", txtTitle.Text);

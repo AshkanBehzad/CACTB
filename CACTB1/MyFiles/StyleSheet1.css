@@ -79,6 +79,9 @@ ul li{
 .margin-top-25{
     margin-top:25px !important;
 }
+.margin-top-15{
+    margin-top:15px !important;
+}
 .ID-width{
     width:15px !important;
 }
@@ -109,4 +112,14 @@ ul li{
     border-bottom-left-radius:3px;
     border-top-left-radius:3px;
     border-left:thin solid #949494;
+}
+.full-width{
+    width:100% !important;
+}
+.center-table{
+    position:absolute !important;
+    margin:0 auto !important;
+}
+.center-table td{
+    padding:15px !important;
 }

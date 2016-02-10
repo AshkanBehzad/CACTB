@@ -23,7 +23,7 @@ namespace CACTB1.Admin
         public void LoadData()
         {
             db.SelectQueryFillDropDownList("SELECT * FROM SkillCategory", ddlSkillCat, "Title", "ID");
-            db.SelectQueryFillGridView("SELECT * FROM SkillList", grdSkills);
+            db.SelectQueryFillGridView("SELECT * FROM SkillList ORDER BY Cat_ID", grdSkills);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -73,7 +73,7 @@ namespace CACTB1.Admin
             {
                 if (e.CommandArgument != null)
                 {
-                    int id = Convert.ToInt32(e.CommandArgument);
+                    string id = e.CommandArgument.ToString();
                     if (e.CommandName == "DeleteItem")
                     {
                         SqlCommand cmd = new SqlCommand("DELETE FROM Skills WHERE ID=@id", connection);

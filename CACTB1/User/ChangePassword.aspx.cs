@@ -8,11 +8,10 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CACTB1.Admin
+namespace CACTB1.User
 {
-    public partial class TREE : System.Web.UI.Page
+    public partial class ChangePassword : System.Web.UI.Page
     {
-
         static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
         static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
         static string connectionString = connString.ToString();
@@ -21,6 +20,22 @@ namespace CACTB1.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                SqlCommand cmd = new SqlCommand("", connection);
+                cmd.CommandText = "UPDATE Users SET Password = @pass WHERE Member_ID=@mid";
+                cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
+                cmd.Parameters.AddWithValue("@mid", Session["Mid"]);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                Session["Mid"] = Session["Mid"];
+                Response.Redirect("SelectImage.aspx");
+            }
         }
     }
 }

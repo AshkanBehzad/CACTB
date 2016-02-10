@@ -28,7 +28,12 @@ namespace CACTB1.User
             da.Fill(dt);
             lblEmail.Text = dt.Rows[0]["Email"].ToString();
             lblName.Text = dt.Rows[0]["FullName"].ToString();
-            imgProfile.ImageUrl = dt.Rows[0]["Image"].ToString();
+            if (string.IsNullOrEmpty(dt.Rows[0]["ImageExtention"].ToString()) || string.IsNullOrWhiteSpace(dt.Rows[0]["ImageExtention"].ToString()))
+            {
+                imgProfile.ImageUrl = "~/MyFiles/user.png";
+            }
+            else
+                imgProfile.ImageUrl = dt.Rows[0]["Image"].ToString() + dt.Rows[0]["ImageExtention"].ToString();
         }
         protected void Page_Load(object sender, EventArgs e)
         {

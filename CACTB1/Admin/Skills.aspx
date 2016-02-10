@@ -30,15 +30,12 @@
                                     <asp:TemplateField>
 
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="lbtnDelete" CommandArgument='<%#Eval("Sid") %>' CommandName="DeleteItem" runat="server">حذف</asp:LinkButton>
-                                            <asp:LinkButton ID="lbtnEdit" CommandArgument='<%#Eval("Sid") %>' CommandName="EditItem" runat="server">ویرایش</asp:LinkButton>
-                                            <asp:LinkButton ID="lbtnDes"
-                                                runat="server"
-                                                data-container="body"
-                                                data-toggle="popover"
-                                                placement="right"
-                                                Data-Content='<%#Eval("Description") %>'>
-                                                        توضیحات</asp:LinkButton>
+                                            <asp:LinkButton ID="lbtnDelete" CommandArgument='<%#Eval("Sid") %>' CommandName="DeleteItem" runat="server">حذف</asp:LinkButton>&nbsp;/&nbsp;
+                                            <asp:LinkButton ID="lbtnEdit" CommandArgument='<%#Eval("Sid") %>' CommandName="EditItem" runat="server">ویرایش</asp:LinkButton>&nbsp;/&nbsp;
+                                            <a  style="cursor:pointer"
+                                                data-toggle="tooltip"
+                                                data-placement="left"
+                                                title='<%#Eval("Description") %>'>توضیحات</a>
                                         </ItemTemplate>
 
                                     </asp:TemplateField>
@@ -46,7 +43,7 @@
                             </asp:GridView>
                             <script>
                                 $(function () {
-                                    $('[data-toggle="popover"]').popover()
+                                    $('[data-toggle="tooltip"]').tooltip()
                                 })
                             </script>
                         </div>

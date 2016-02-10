@@ -33,13 +33,11 @@
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lbtnDeleteCat" runat="server" CommandArgument='<%#Eval("ID")%>' CommandName="DeleteItem">حذف</asp:LinkButton>
-                                            <asp:LinkButton ID="lbtnEditCat" runat="server" CommandArgument='<%#Eval("ID")%>' CommandName="EditItem">ویرایش</asp:LinkButton>
-                                            <asp:LinkButton ID="lbtnDes"
-                                                runat="server"
+                                           / &nbsp;<asp:LinkButton ID="lbtnEditCat" runat="server" CommandArgument='<%#Eval("ID")%>' CommandName="EditItem">ویرایش</asp:LinkButton>
+                                           / &nbsp;<a  style="cursor:pointer"
                                                 data-toggle="tooltip"
                                                 data-placement="left"
-                                                title='<%#Eval("Description") %>'>
-                                                        توضیحات</asp:LinkButton>
+                                                title='<%#Eval("Description") %>'>توضیحات</a>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

@@ -7,81 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CACTB1.Admin {
+namespace CACTB1.User {
     
     
-    public partial class Search {
+    public partial class SelectSkill {
         
         /// <summary>
-        /// txtName control.
+        /// lblWarn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.Label lblWarn;
         
         /// <summary>
-        /// txtMemberID control.
+        /// grdCat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMemberID;
+        protected global::System.Web.UI.WebControls.GridView grdCat;
         
         /// <summary>
-        /// drpField control.
+        /// lbtnSkillRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpField;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnSkillRequest;
         
         /// <summary>
-        /// txtNetionalID control.
+        /// btnNext control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNetionalID;
+        protected global::System.Web.UI.WebControls.Button btnNext;
         
         /// <summary>
-        /// ddlStatuse control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStatuse;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// txtDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
-        /// btnSearch control.
+        /// btnSuggest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
-        
-        /// <summary>
-        /// grdSearchedList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdSearchedList;
+        protected global::System.Web.UI.WebControls.Button btnSuggest;
     }
 }

@@ -61,12 +61,12 @@
                     runat="server"
                     ErrorMessage="شماره ملی خود را وارد کنید"
                     ForeColor="#CC0000">*</asp:RequiredFieldValidator>
-                <asp:CustomValidator 
-                    ControlToValidate="txtNatioanlID" 
-                    ID="cvNationalID" 
-                    runat="server" 
-                    ErrorMessage="شماره ملّی معتبر نیست" 
-                    ForeColor="#CC0000" 
+                <asp:CustomValidator
+                    ControlToValidate="txtNatioanlID"
+                    ID="cvNationalID"
+                    runat="server"
+                    ErrorMessage="شماره ملّی معتبر نیست"
+                    ForeColor="#CC0000"
                     OnServerValidate="cvNationalID_ServerValidate">*</asp:CustomValidator>
                 <asp:RegularExpressionValidator ControlToValidate="txtNatioanlID"
                     ErrorMessage="شماره ملّی معتبر نیست"
@@ -78,23 +78,23 @@
             </div>
             <div class="form-group">
                 <label>رایانامه :</label>
-                <asp:RequiredFieldValidator 
-                    ControlToValidate="txtEmail" 
-                    ID="RequiredFieldValidator5" 
-                    runat="server" 
-                    ErrorMessage="رایانامه خود را وارد کنید" 
+                <asp:RequiredFieldValidator
+                    ControlToValidate="txtEmail"
+                    ID="RequiredFieldValidator5"
+                    runat="server"
+                    ErrorMessage="رایانامه خود را وارد کنید"
                     ForeColor="#CC0000">*</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator 
-                    ID="RegularExpressionValidator1" 
-                    runat="server" 
-                    ControlToValidate="txtEmail" 
-                    ForeColor="#CC0000" 
+                <asp:RegularExpressionValidator
+                    ID="RegularExpressionValidator1"
+                    runat="server"
+                    ControlToValidate="txtEmail"
+                    ForeColor="#CC0000"
                     ErrorMessage="رایانامه معتبر نیست"
                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                 <asp:TextBox ID="txtEmail" CssClass="form-control farsi" placeholder="رایانامه" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label> شمارۀ تماس(همراه)      :</label>
+                <label>شمارۀ تماس(همراه)      :</label>
                 <asp:RegularExpressionValidator ControlToValidate="txtPhoneNumber"
                     ErrorMessage="شماره تماس معتبر نیست"
                     ValidationExpression="\d+"
@@ -118,8 +118,20 @@
                 <asp:DropDownList ID="ddlField" CssClass="form-control farsi" runat="server" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="ID"></asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CACTB1ConnectionString %>" SelectCommand="SELECT * FROM [Fields]"></asp:SqlDataSource>
             </div>
+
+            <div class="form-group">
+                <label>جنسیت  : </label>
+                <div style="margin-right: 10px;">
+                    <div>
+                        <asp:RadioButton ID="rdbmale" Checked="true" GroupName="Gender" runat="server" />&nbsp;&nbsp;مرد
+                    </div>
+                    <div>
+                        <asp:RadioButton ID="rdbFemale" GroupName="Gender" runat="server" />&nbsp;&nbsp;زن
+                    </div>
+                </div>
+            </div>
             <asp:Button ID="btnEdit" CssClass="btn btn-lg btn-warning btn-block farsi " runat="server" Text="ویرایش اطلاعات" OnClick="btnEdit_Click" />
-            <asp:Button ID="btnNext" CssClass="btn btn-lg btn-primary btn-block farsi margin-top-25" runat="server" Text="تایید" />
+            <asp:Button ID="btnNext" CssClass="btn btn-lg btn-primary btn-block farsi margin-top-25" runat="server" Text="تایید" OnClick="btnNext_Click" />
 
         </div>
     </div>

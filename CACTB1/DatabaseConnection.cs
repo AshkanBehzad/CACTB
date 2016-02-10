@@ -67,6 +67,12 @@ namespace CACTB1
             grd.DataSource = SelectQueryFillDataTable(selectQuery);
             grd.DataBind();
         }
+        //Fill A DataList
+        public void SelectQueryFillDataList(string selectQuery, DataList dtl)
+        {
+            dtl.DataSource = SelectQueryFillDataTable(selectQuery);
+            dtl.DataBind();
+        }
         //
         public string ExecuteScaler(string tableName, string FieldName, string fieldCondition, string valueCondition)
         {
