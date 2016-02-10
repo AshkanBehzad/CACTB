@@ -108,9 +108,11 @@
     <Content Include="Admin\SkilsCategory.aspx" />
     <Content Include="ErrorPages\abl.html" />
     <Content Include="ErrorPages\ablStyle.css" />
+    <Content Include="ErrorPages\bg.png" />
     <Content Include="ErrorPages\code-wallpaper-16.jpg" />
     <Content Include="ErrorPages\fourOfour.html" />
     <Content Include="ErrorPages\Oops.html" />
+    <Content Include="ErrorPages\Screenshot %2812%29.png" />
     <Content Include="MyFiles\user.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
