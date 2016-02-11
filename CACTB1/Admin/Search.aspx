@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-lg-3 pull-right">
                             <div class="form-group">
-                                <asp:DropDownList ID="drpField" CssClass="form-control" runat="server">    
+                                <asp:DropDownList ID="drpField" CssClass="form-control" runat="server" AppendDataBoundItems="True">
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-lg-3 pull-right">
                             <div class="form-group">
-                                <asp:DropDownList ID="ddlStatuse" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="Status" DataValueField="ID"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlStatuse" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="Status" DataValueField="ID" AppendDataBoundItems="True"></asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CACTB1ConnectionString %>" SelectCommand="SELECT [ID], [Status] FROM [MembershipStatus]"></asp:SqlDataSource>
                             </div>
                             <div class="form-group">
@@ -71,7 +71,7 @@
                             <asp:BoundField DataField="Mid" HeaderText="شماره دانشجویی" />
                             <asp:TemplateField HeaderText="عکس">
                                 <ItemTemplate>
-                                    <asp:Image ID="imgProfile" ImageUrl='<%#Eval("Image")%>' CssClass="img-responsive img-circle loginPic" Width="50" runat="server" />
+                                    <asp:Image ID="imgProfile" ImageUrl='<%#Eval("Image")%>'+'<%#Eval("ImageExtention") %>' CssClass="img-responsive img-circle loginPic" Width="50" runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="FullName" HeaderText="نام" />

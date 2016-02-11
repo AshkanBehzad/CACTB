@@ -30,7 +30,7 @@
                                             <asp:TemplateField>
 
                                                 <ItemTemplate>
-                                                    <asp:CheckBox ID="ckbSkill" CssClass="pull-right text-right" runat="server" AutoPostBack="true" />
+                                                    <asp:CheckBox ID="ckbSkill" CssClass="pull-right text-right" runat="server" />
                                                 </ItemTemplate>
 
                                             </asp:TemplateField>

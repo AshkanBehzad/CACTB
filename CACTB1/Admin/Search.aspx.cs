@@ -21,8 +21,10 @@ namespace CACTB1.Admin
         DatabaseConnection db = new DatabaseConnection();
         public void LoadData()
         {
-            drpField.Items.Insert(0, new ListItem("مقطع/گرایش", string.Empty));
+            drpField.Items.Insert(0,new ListItem("<--مقطع/گرایش-->","") );
+            ddlStatuse.Items.Insert(0,new ListItem("<--وضعیت عضو-->", "") );
             drpField.SelectedIndex = 0;
+            ddlStatuse.SelectedIndex = 0;
             db.SelectQueryFillDropDownList("SELECT * FROM Fields", drpField, "Title", "ID");
 
         }
