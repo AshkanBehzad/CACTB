@@ -92,11 +92,12 @@
             if (rowCount == 0) {
                 $("#report").html("هیچ رکوردی وجود ندارد");
             }
-
             $("#ContentPlaceHolder1_grdSkills td").addClass("farsi");
             $("#ContentPlaceHolder1_grdSkills th").addClass("text-center");
             $("#ContentPlaceHolder1_grdSkills td").addClass("td-bordered");
             $("#ContentPlaceHolder1_grdSkills th").addClass("td-bordered");
+            $("#ContentPlaceHolder1_grdSkills tr td:nth-child(1)").removeClass("farsi");
+            $("#ContentPlaceHolder1_grdSkills tr td:nth-child(1)").addClass("ltr");
 
 
         });

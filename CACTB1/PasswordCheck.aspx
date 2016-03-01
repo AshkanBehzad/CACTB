@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>رمز عبور</title>
+    <style>
+        input[type="text"] {
+            border: none;
+            box-shadow: inset 0 0 10px #ccc;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -24,7 +30,7 @@
                 <asp:CustomValidator ID="cvPassword" runat="server" ErrorMessage="رمز عبور اشتباه است" ForeColor="#CC0000" OnServerValidate="cvPassword_ServerValidate">رمز عبور اشتباه است</asp:CustomValidator>
             </div>
             <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block farsi" runat="server" Text="ورود" OnClick="btnLogin_Click" />
-            <asp:LinkButton ID="lbtnForgotPass" CssClass="pull-right off-10" runat="server">رمز عبور خود را فراموش کرده‌اید؟&nbsp;&nbsp;<i class="fa fa-arrow-left"></i></asp:LinkButton>
+            <asp:LinkButton ID="lbtnForgotPass" CssClass="pull-right off-10" runat="server" OnClick="lbtnForgotPass_Click">رمز عبور خود را فراموش کرده‌اید؟&nbsp;&nbsp;<i class="fa fa-arrow-left"></i></asp:LinkButton>
            
         </div>
     </div>

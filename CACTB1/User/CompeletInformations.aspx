@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="CompeletInformations.aspx.cs" Inherits="CACTB1.User.CompeletInformations1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <style>
+        input[type="text"] {
+            border: none;
+            box-shadow: inset 0 0 10px #ccc;
+        }
+    </style>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -39,12 +45,6 @@
                     runat="server"
                     ErrorMessage="شماره دانشجویی خود را وارد کنید"
                     ForeColor="#CC0000">*</asp:RequiredFieldValidator>
-                <asp:CustomValidator ControlToValidate="txtMemberID"
-                    ID="cvMemberID"
-                    runat="server"
-                    ErrorMessage="شماره عضویت/دانشجویی معتبر نیست"
-                    ForeColor="#CC0000"
-                    OnServerValidate="cvMemberID_ServerValidate">*</asp:CustomValidator>
                 <asp:RegularExpressionValidator ControlToValidate="txtMemberID"
                     ErrorMessage="شماره عضویت/دانشجویی معتبر نیست"
                     ValidationExpression="\d+"
@@ -52,29 +52,6 @@
                     ForeColor="#CC0000"
                     runat="server">*</asp:RegularExpressionValidator>
                 <asp:TextBox ID="txtMemberID" CssClass="form-control farsi" placeholder="شماره عضویت/دانشجویی" runat="server"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>شماره ملّی :</label>
-                <asp:RequiredFieldValidator
-                    ControlToValidate="txtNatioanlID"
-                    ID="RequiredFieldValidator4"
-                    runat="server"
-                    ErrorMessage="شماره ملی خود را وارد کنید"
-                    ForeColor="#CC0000">*</asp:RequiredFieldValidator>
-                <asp:CustomValidator
-                    ControlToValidate="txtNatioanlID"
-                    ID="cvNationalID"
-                    runat="server"
-                    ErrorMessage="شماره ملّی معتبر نیست"
-                    ForeColor="#CC0000"
-                    OnServerValidate="cvNationalID_ServerValidate">*</asp:CustomValidator>
-                <asp:RegularExpressionValidator ControlToValidate="txtNatioanlID"
-                    ErrorMessage="شماره ملّی معتبر نیست"
-                    ValidationExpression="\d+"
-                    ID="RegularExpressionValidator4"
-                    ForeColor="#CC0000"
-                    runat="server">*</asp:RegularExpressionValidator>
-                <asp:TextBox ID="txtNatioanlID" CssClass="form-control farsi" placeholder="شماره ملّی" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
                 <label>رایانامه :</label>

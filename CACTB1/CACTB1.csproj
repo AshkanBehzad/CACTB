@@ -100,7 +100,7 @@
     <Content Include="Admin\EditSkillRequest.aspx" />
     <Content Include="Admin\EditSkills.aspx" />
     <Content Include="Admin\Fields.aspx" />
-    <Content Include="Admin\MemberStats.aspx" />
+    <Content Include="Admin\MembersStats.aspx" />
     <Content Include="Admin\Search.aspx" />
     <Content Include="Admin\SetAdmin.aspx" />
     <Content Include="Admin\SkillRequests.aspx" />
@@ -108,6 +108,8 @@
     <Content Include="Admin\SkilsCategory.aspx" />
     <Content Include="ErrorPages\fourOfour.html" />
     <Content Include="ErrorPages\Oops.html" />
+    <Content Include="MyFiles\IMG_6190.jpg" />
+    <Content Include="MyFiles\T3Ht7S3.gif" />
     <Content Include="MyFiles\user.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -118,16 +120,20 @@
     <Content Include="PersianCalenderConvertor.dll" />
     <Content Include="README.md" />
     <Content Include="Admin\Admin.Master" />
-    <Content Include="MyFiles\BYekan.ttf" />
     <Content Include="Login.aspx" />
     <Content Include="PasswordCheck.aspx" />
     <Content Include="UserLogin.Master" />
     <Content Include="User\ChangePassword.aspx" />
     <Content Include="User\CompeletInformations.aspx" />
+    <Content Include="User\Hello.aspx" />
+    <Content Include="User\profile.aspx" />
     <Content Include="User\SelectImage.aspx" />
     <Content Include="User\SelectSkill.aspx" />
-    <Content Include="User\SelectSkills.aspx" />
+    <Content Include="User\SkillVal.aspx" />
+    <Content Include="User\SocialNets.aspx" />
     <Content Include="User\User.Master" />
+    <Content Include="MyFiles\BYEKAN.TTF" />
+    <Content Include="MyFiles\IRANIAN SANS.TTF" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,6 +151,7 @@
     <Content Include="MyFiles\StyleSheet1.css" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="User\WorkExp.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -218,12 +225,12 @@
     <Compile Include="Admin\MembersList.aspx.designer.cs">
       <DependentUpon>MembersList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MemberStats.aspx.cs">
-      <DependentUpon>MemberStats.aspx</DependentUpon>
+    <Compile Include="Admin\MembersStats.aspx.cs">
+      <DependentUpon>MembersStats.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\MemberStats.aspx.designer.cs">
-      <DependentUpon>MemberStats.aspx</DependentUpon>
+    <Compile Include="Admin\MembersStats.aspx.designer.cs">
+      <DependentUpon>MembersStats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
@@ -260,6 +267,7 @@
     <Compile Include="Admin\SkilsCategory.aspx.designer.cs">
       <DependentUpon>SkilsCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MailService.cs" />
     <Compile Include="PersianDate.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Global.asax.cs">
@@ -301,6 +309,20 @@
     <Compile Include="User\CompeletInformations.aspx.designer.cs">
       <DependentUpon>CompeletInformations.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\Hello.aspx.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hello.aspx.designer.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\SelectImage.aspx.cs">
       <DependentUpon>SelectImage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,12 +337,19 @@
     <Compile Include="User\SelectSkill.aspx.designer.cs">
       <DependentUpon>SelectSkill.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\SelectSkills.aspx.cs">
-      <DependentUpon>SelectSkills.aspx</DependentUpon>
+    <Compile Include="User\SkillVal.aspx.cs">
+      <DependentUpon>SkillVal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\SelectSkills.aspx.designer.cs">
-      <DependentUpon>SelectSkills.aspx</DependentUpon>
+    <Compile Include="User\SkillVal.aspx.designer.cs">
+      <DependentUpon>SkillVal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SocialNets.aspx.cs">
+      <DependentUpon>SocialNets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SocialNets.aspx.designer.cs">
+      <DependentUpon>SocialNets.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
@@ -328,6 +357,13 @@
     </Compile>
     <Compile Include="User\User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\WorkExp.aspx.cs">
+      <DependentUpon>WorkExp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\WorkExp.aspx.designer.cs">
+      <DependentUpon>WorkExp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

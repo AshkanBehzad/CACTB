@@ -10,24 +10,15 @@
 namespace CACTB1.User {
     
     
-    public partial class SelectSkills {
+    public partial class SkillVal {
         
         /// <summary>
-        /// grdSkills control.
+        /// grdSkill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdSkills;
-        
-        /// <summary>
-        /// btnNext control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
+        protected global::System.Web.UI.WebControls.GridView grdSkill;
     }
 }

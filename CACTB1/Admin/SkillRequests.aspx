@@ -15,17 +15,18 @@
             <div class="container-fluid margin-top-25">
                 <div class="panel panel-default">
                     <div class="panel-heading farsi">
+                        <label>تعداد درخواستها: </label>
+                        <asp:Label ID="lblCount" runat="server" Text=""></asp:Label>
                         <div class="clearfix"></div>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="table-responsive farsi">
-                            <asp:GridView ID="grdSkills" CssClass="table rtl table-striped table-bordered table-hover farsi" AutoGenerateColumns="False"  runat="server" OnRowCommand="grdSkills_RowCommand">
+                            <asp:GridView ID="grdSkills" CssClass="table rtl table-striped table-bordered table-hover farsi" AutoGenerateColumns="False"  runat="server" OnRowCommand="grdSkills_RowCommand" OnRowUpdated="grdSkills_RowUpdated">
                                 <Columns>
                                     <asp:BoundField DataField="FullName" HeaderText="نام درخواست دهنده" />
                                     <asp:BoundField DataField="Member_ID" HeaderText="شماره عضویت درخواست دهنده" />
                                     <asp:BoundField DataField="SRTitle" HeaderText="دانش پیشنهادی" />
-                                    <asp:BoundField DataField="SkillCat" HeaderText="دسته‌بندی پیشنهادی" />
                                     <asp:BoundField DataField="Description" HeaderText="توضیحات" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
@@ -49,7 +50,6 @@
             if (rowCount == 0) {
                 $("#report").html("هیچ رکوردی وجود ندارد");
             }
-
             $("#ContentPlaceHolder1_grdSkills td").addClass("farsi");
             $("#ContentPlaceHolder1_grdSkills th").addClass("text-center");
             $("#ContentPlaceHolder1_grdSkills td").addClass("td-bordered");

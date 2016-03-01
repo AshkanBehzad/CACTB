@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="SelectSkill.aspx.cs" Inherits="CACTB1.User.SelectSkill" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeFile="SelectSkill.aspx.cs" Inherits="CACTB1.User.SelectSkill" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
@@ -16,7 +16,7 @@
 
 
 
-                <asp:GridView ID="grdCat" CssClass="container-fluid full-width ltr" DataKeyNames="ID" runat="server"  AutoGenerateColumns="False" OnRowDataBound="grdCat_RowDataBound" BorderStyle="None" GridLines="None" Width="163px">
+                <asp:GridView ID="grdCat" CssClass="container-fluid full-width ltr" DataKeyNames="ID" runat="server" AutoGenerateColumns="False" OnRowDataBound="grdCat_RowDataBound" BorderStyle="None" GridLines="None" Width="163px">
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
@@ -28,11 +28,9 @@
                                         <Columns>
                                             <asp:BoundField DataField="Title" />
                                             <asp:TemplateField>
-
                                                 <ItemTemplate>
                                                     <asp:CheckBox ID="ckbSkill" CssClass="pull-right text-right" runat="server" />
                                                 </ItemTemplate>
-
                                             </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
@@ -76,6 +74,15 @@
                     <div class="form-group">
                         <label>عنوان‌ : </label>
                         <asp:TextBox ID="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-body farsi">
+                    <div class="form-group">
+                        <label>سطح‌ : </label>
+                        <asp:DropDownList ID="ddlVal" CssClass="form-control"  runat="server" AppendDataBoundItems="true">
+                            <asp:ListItem Selected="True" Value="0" Text="انتخاب کنید"></asp:ListItem>
+                            <asp:ListItem Text="مبتدی"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
                 <div class="modal-body farsi">

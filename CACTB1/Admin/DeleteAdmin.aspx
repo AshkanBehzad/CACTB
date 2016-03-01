@@ -24,13 +24,9 @@
                                 <asp:TextBox ID="txtMemberID" placeHolder="جست و جو بر حسب شماره عضویت" CssClass="form-control" runat="server" OnTextChanged="txtName_TextChanged" AutoPostBack="True"></asp:TextBox>
                             </div>
                         </div>
-                        <!-- /.col-lg-6 (nested) -->
                     </div>
-                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
         </div>
 
         <div class="col-md-8 col-sm-12 col-xs-12 pull-right" id="result">
@@ -38,7 +34,6 @@
                 <div class="panel-heading farsi">
                     <h4>نتایج</h4>
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="table-responsive farsi">
                         <label id="report"></label>
@@ -58,12 +53,9 @@
                         </asp:GridView>
                     </div>
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
         </div>
         <div class="clearfix"></div>
-        <!-- /.col-lg-12 -->
     </div>
     <script>
         $(document).ready(function () {

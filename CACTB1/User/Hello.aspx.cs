@@ -11,9 +11,8 @@ using System.Web.UI.WebControls;
 
 namespace CACTB1.User
 {
-    public partial class User : System.Web.UI.MasterPage
+    public partial class Hello : System.Web.UI.Page
     {
-
 
         static Configuration rootWebConfig = WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
         static ConnectionStringSettings connString = rootWebConfig.ConnectionStrings.ConnectionStrings["CACTB1ConnectionString"];
@@ -21,21 +20,25 @@ namespace CACTB1.User
         SqlConnection connection = new SqlConnection(connectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Mid"] != null)
+            if (Request.QueryString["MMID"] != null || Request.QueryString["MPASS"] != null)
             {
-                string mid = Session["Mid"].ToString();
-                SqlDataAdapter da = new SqlDataAdapter("", connection);
+                SqlDataAdapter da = new SqlDataAdapter("",connection);
                 DataTable dt = new DataTable();
-                da.SelectCommand.CommandText = "SELECT * FROM MemberList WHERE Mid=@mid";
-                da.SelectCommand.Parameters.AddWithValue("@mid", mid);
+                da.SelectCommand.CommandText = "SELECT * FROM Users WHERE Member_ID = @mid AND Password = @pass";
+                da.SelectCommand.Parameters.AddWithValue("@mid",Request.QueryString["MMID"]);
+                da.SelectCommand.Parameters.AddWithValue("@pass",Request.QueryString["MPASS"]);
                 da.Fill(dt);
-                if (Convert.ToBoolean(dt.Rows[0]["IsCompeleted"]))
+                if (dt.Rows.Count != 0)
                 {
-                    Response.Redirect("~/User/profile.aspx");
+                    Session["Mid"] = Request.QueryString["MMID"];
+                    Response.Redirect("~/User/CompeletInformations.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
                 }
             }
-            else
-                Response.Redirect("~/Login.aspx");
+
         }
     }
 }

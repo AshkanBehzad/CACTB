@@ -30,8 +30,8 @@ namespace CACTB1.Admin
             string id = e.CommandArgument.ToString();
             if (e.CommandName == "Show")
             {
-                Session["Mid"] = id.ToString();
-                Response.Redirect("MemberStats.aspx");
+                Session["MUid"] = id.ToString();
+                Response.Redirect("MembersStats.aspx");
             }
         }
         

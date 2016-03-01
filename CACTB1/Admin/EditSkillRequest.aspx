@@ -22,9 +22,11 @@
                 </div>
                 <div class="form-group" runat="server" id="cstm">
                     <label>دسته بندی  :</label>
-                    <asp:TextBox ID="txtSkillcat" Text="متفرقه" CssClass="form-control farsi" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="ddlSkillCat" CssClass="form-control" runat="server" >
+                    </asp:DropDownList>
                 </div>
-                <asp:Button ID="btnEdit" CssClass=" btn btn-block btn-info margin-top-25" runat="server" Text="ویرایش" />
+                <asp:Button ID="btnDelete" CssClass=" btn btn-block btn-danger margin-top-25" runat="server" Text="حذف" OnClick="btnDelete_Click" />
+                <asp:Button ID="btnEdit" CssClass=" btn btn-block btn-info" runat="server" Text="افزودن" OnClick="btnEdit_Click" />
             </div>
         </div>
     </div>

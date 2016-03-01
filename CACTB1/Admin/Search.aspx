@@ -66,14 +66,9 @@
             <div class="panel-body">
                 <div class="table-responsive farsi">
                     <label id="report"></label>
-                    <asp:GridView CssClass="table table-bordered table-hover rtl" ID="grdSearchedList" runat="server" AllowPaging="True" OnPageIndexChanging="grdSearchedList_PageIndexChanging" AutoGenerateColumns="False">
+                    <asp:GridView CssClass="table table-bordered table-hover rtl" ID="grdSearchedList" runat="server" AllowPaging="True" OnPageIndexChanging="grdSearchedList_PageIndexChanging" AutoGenerateColumns="False" OnRowCommand="grdSearchedList_RowCommand">
                         <Columns>
                             <asp:BoundField DataField="Mid" HeaderText="شماره دانشجویی" />
-                            <asp:TemplateField HeaderText="عکس">
-                                <ItemTemplate>
-                                    <asp:Image ID="imgProfile" ImageUrl='<%#Eval("Image")%>'+'<%#Eval("ImageExtention") %>' CssClass="img-responsive img-circle loginPic" Width="50" runat="server" />
-                                </ItemTemplate>
-                            </asp:TemplateField>
                             <asp:BoundField DataField="FullName" HeaderText="نام" />
                             <asp:BoundField DataField="NationalID" HeaderText="شماره ملّی" />
                             <asp:BoundField DataField="Email" HeaderText="رایانامه" />
@@ -87,6 +82,11 @@
                             <asp:TemplateField HeaderText="اطلاعات تکمیل شده؟">
                                 <ItemTemplate>
                                     <asp:CheckBox ID="CheckBox1" Enabled="false" Checked='<%#Eval("IsCompeleted") %>' runat="server" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="lbtnShow" CommandArgument='<%#Eval("Mid")%>' CommandName="Show" runat="server">نمایش اطلاعات و تنظیمات</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

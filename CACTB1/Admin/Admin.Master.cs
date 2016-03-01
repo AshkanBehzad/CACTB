@@ -27,5 +27,10 @@ namespace CACTB1.Admin
             Session["UserType"] = null;
             Response.Redirect("~/Login.aspx");
         }
+
+        protected void lbtnProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/User/profile.aspx");
+        }
     }
 }

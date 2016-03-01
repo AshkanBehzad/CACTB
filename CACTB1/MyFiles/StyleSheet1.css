@@ -1,9 +1,13 @@
 ﻿body{
-    font-family:BYekan;
+    font-family:'IRANIAN SANS';
 }
 @font-face {
     font-family: BYekan;
-    src: url('BYekan.ttf') format('truetype');
+    src: url('BYEKAN.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'IRANIAN SANS';
+    src: url('IRANIAN SANS.TTF') format('truetype');
 }
 ul li{
     list-style:none !important;
@@ -16,10 +20,11 @@ ul li{
 }
 .ltr{
     direction:ltr !important;
+    text-align:right;
 }
 .farsi{
     direction:rtl !important;
-    font-family: BYekan !important;
+    font-family: 'IRANIAN SANS' !important;
 }
 .padd-0{
     padding:0px !important;
@@ -122,4 +127,46 @@ ul li{
 }
 .center-table td{
     padding:15px !important;
+}
+.margin-5{
+    margin:5px !important;
+}
+.myButton {
+	-moz-box-shadow: 0px 0px 21px 0px #3dc21b;
+	-webkit-box-shadow: 0px 0px 21px 0px #3dc21b;
+	box-shadow: 0px 0px 21px 0px #3dc21b;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
+	background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
+	background-color:#44c767;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:15px;
+	padding:5px 76px;
+	text-decoration:none;
+	text-shadow:0px 0px 4px #2f6627;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
+	background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }

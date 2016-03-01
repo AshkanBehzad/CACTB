@@ -60,5 +60,14 @@ namespace CACTB1.Admin
             SearchMember();
         }
 
+        protected void grdSearchedList_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string id = e.CommandArgument.ToString();
+            if (e.CommandName == "Show")
+            {
+                Session["MUid"] = id;
+                Response.Redirect("MembersStats.aspx");
+            }
+        }
     }
 }

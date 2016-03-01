@@ -43,8 +43,7 @@ namespace CACTB1.User
         {
             if (Page.IsValid)
             {
-                Session["Mid"] = txtUserName.Text;
-                Response.Redirect("~/PasswordCheck.aspx");
+                Response.Redirect("~/PasswordCheck.aspx?id="+ txtUserName.Text);
             }
         }
     }

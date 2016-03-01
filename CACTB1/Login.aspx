@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>صفحه ورود</title>
+    <style>
+        input[type="text"] {
+            border: none;
+            box-shadow: inset 0 0 10px #ccc;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

@@ -20,6 +20,7 @@ namespace CACTB1.Admin
         public void LoadData()
         {
             db.SelectQueryFillGridView("SELECT * FROM SkillReq", grdSkills);
+             lblCount.Text = db.Count("SkillReq", "ID").ToString();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +34,7 @@ namespace CACTB1.Admin
             if (e.CommandName == "DeleteItem")
             {
                 SqlCommand cmd = new SqlCommand("", connection);
-                cmd.CommandText = "DELETE FROM SkillReq WHERE ID=@id";
+                cmd.CommandText = "DELETE FROM SkillRequest WHERE ID=@id";
                 cmd.Parameters.AddWithValue("@id", id);
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -41,7 +42,13 @@ namespace CACTB1.Admin
                 LoadData();
             }
             else
+
                 Response.Redirect("EditSkillRequest.aspx?srid=" + id);
+        }
+
+        protected void grdSkills_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,8 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="CACTB1.User.ChangePassword" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<style>
+    input[type="text"] {
+        border: none;
+        box-shadow: inset 0 0 10px #ccc;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
 
 
     <div class="login-panel panel panel-default farsi">
@@ -16,7 +23,7 @@
                 <asp:TextBox ID="txtPassCheck" CssClass="margin-top-25 form-control" placeholder="تکرار رمز عبور" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" CssClass="margin-top-15" ForeColor="#CC0000" ErrorMessage="عدم مطابقت رمز عبور" ControlToCompare="txtPassCheck" ControlToValidate="txtPassword"></asp:CompareValidator><br />
             </div>
-            <asp:Button ID="btnNext" CssClass="btn btn-lg btn-primary btn-block farsi" runat="server" Text="بعدی" OnClick="btnNext_Click"/>
+            <asp:Button ID="btnNext" CssClass="btn btn-lg btn-primary btn-block farsi" runat="server" Text="بعدی" OnClick="btnNext_Click" />
 
         </div>
     </div>

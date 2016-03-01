@@ -55,22 +55,6 @@
                                 <asp:textbox id="txtLastName" cssclass="form-control" runat="server"></asp:textbox>
                             </div>
                             <div class="form-group">
-                                <label>شماره ملّی : </label>
-                                <asp:requiredfieldvalidator
-                                    forecolor="#CC0000"
-                                    id="RequiredFieldValidator3"
-                                    runat="server"
-                                    errormessage="شماره ملّی را وارد نکرده‌اید"
-                                    controltovalidate="txtNationalID">*</asp:requiredfieldvalidator>
-                                <asp:customvalidator id="CustomValidator1" runat="server"
-                                    controltovalidate="txtNationalID"
-                                    onservervalidate="CustomValidator1_ServerValidate"
-                                    errormessage="کد ملی وارد شده معتبر نیست"
-                                    forecolor="#CC0000" validateemptytext="True">*</asp:customvalidator>
-                                <asp:textbox id="txtNationalID" cssclass="form-control" runat="server"></asp:textbox>
-
-                            </div>
-                            <div class="form-group">
                                 <label>شماره دانشجویی : </label>
                                 <asp:requiredfieldvalidator
                                     forecolor="#CC0000"

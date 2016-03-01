@@ -10,6 +10,13 @@ namespace CACTB1
     public class PersianDateConverter
     {
         static PersianCalendar pc = new PersianCalendar();
+        /// <summary>
+        /// yyyy/mm/dd
+        /// <para></para>
+        /// Using <seealso cref="DateTime"/>
+        /// returns <see cref="string"/>
+        /// </summary>
+        /// <returns>string</returns>
         public static string GetDate()
         {
             DateTime date = new DateTime();
